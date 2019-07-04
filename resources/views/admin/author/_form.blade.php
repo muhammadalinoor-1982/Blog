@@ -1,7 +1,7 @@
 <div class="form-group">
     <label class="col-md-12">Author Name</label>
     <div class="col-md-12">
-        <input name="name" value="{{old('name',isset($author)?$author->name:null)}}" type="text" placeholder="Enter Author Name" class="form-control form-control-line @error('name') is-invalid @enderror">
+        <input name="name" value="{{old('name', isset($author)?$author->name:null)}}" type="text" placeholder="Enter Author Name" class="form-control form-control-line @error('name') is-invalid @enderror">
     </div>
 </div>
 @error('name')

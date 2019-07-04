@@ -17,8 +17,11 @@ Route::get('category/{id}', 'HomeController@category_blogs')->name('category.blo
 
 Route::get('login', 'loginController@loginForm')->name('user.login.form');
 Route::post('login', 'loginController@login')->name('user.login');
-Route::middleware('auth')->prefix('admin')->group(function(){
 
+Route::get('subscriber_create', 'SubscriberController@create')->name('create.subscriber');
+Route::post('subscriber_store', 'SubscriberController@store')->name('store.subscriber');
+
+Route::middleware('auth')->prefix('admin')->group(function(){
     Route::get('dashboard', 'dashboardController@index')->name('dashboard');
     Route::get('profile', 'userController@profile')->name('user.profile');
     Route::resource('category','CategoryController');

@@ -12,9 +12,13 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <!-- Newsletter Form -->
-                    <form  action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d" method="post" novalidate>
+                    <form  action="{{route('store.subscriber')}}" method="post" novalidate>
+                        @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter Your Email">
+                            <input name="subscriber" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email">
+                            @error('email')
+                            <div class=" text-danger">{{ $message }}</div>
+                            @enderror
                             <div class="input-group-append">
                                 <button class="btn btn-default">Submit</button>
                             </div>
