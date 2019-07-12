@@ -15,7 +15,7 @@
                     <form  action="{{route('store.subscriber')}}" method="post" novalidate>
                         @csrf
                         <div class="input-group">
-                            <input name="subscriber" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email">
+                            <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email">
                             @error('email')
                             <div class=" text-danger">{{ $message }}</div>
                             @enderror
